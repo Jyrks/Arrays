@@ -4,15 +4,15 @@ import java.util.List;
 public class Sorter {
 
     List<Integer> sort(List<Integer> list) {
-        int counter = 1;
-        while (counter != 0) {
-            counter = 0;
+        boolean replacedElement = true;
+        while (replacedElement) {
+			replacedElement = false;
             for (int i = 0; i < list.size()-1; i++) {
                 if (list.get(i) > list.get(i+1)) {
                     int smaller = list.get(i+1);
                     list.set(i+1, list.get(i));
                     list.set(i, smaller);
-                    counter++;
+					replacedElement = true;
                 }
             }
         }
